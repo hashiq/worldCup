@@ -4,37 +4,33 @@ groups = {
         "Argentina": {"W": 2, "L": 0, "D": 1, "GF": 5, "GA": 2},
         "France": {"W": 2, "L": 1, "D": 0, "GF": 6, "GA": 3},
         "Brazil": {"W": 1, "L": 1, "D": 1, "GF": 4, "GA": 4},
-        "Germany": {"W": 0, "L": 3, "D": 0, "GF": 2, "GA": 8}
-    },
+        "Germany": {"W": 0, "L": 3, "D": 0, "GF": 2, "GA": 8} },
     "Group_B": {
         "Spain": {"W": 3, "L": 0, "D": 0, "GF": 7, "GA": 1},
         "Portugal": {"W": 2, "L": 1, "D": 0, "GF": 5, "GA": 3},
         "Uruguay": {"W": 1, "L": 2, "D": 0, "GF": 3, "GA": 5},
-        "Japan": {"W": 0, "L": 3, "D": 0, "GF": 1, "GA": 7}
-    },
+        "Japan": {"W": 0, "L": 3, "D": 0, "GF": 1, "GA": 7} },
     "Group_C": {
         "England": {"W": 2, "L": 0, "D": 1, "GF": 6, "GA": 2},
         "USA": {"W": 1, "L": 1, "D": 1, "GF": 3, "GA": 3},
         "Mexico": {"W": 1, "L": 2, "D": 0, "GF": 2, "GA": 5},
-        "Italy": {"W": 0, "L": 2, "D": 1, "GF": 2, "GA": 5}
-    }
+        "Italy": {"W": 0, "L": 2, "D": 1, "GF": 2, "GA": 5}}
 }
 
 def win_max(groupName):
-    higher_win =0
-    higher_team =""
-    arr_higher = {}
+    current_higest =0
+    highest_win = {}
     user_group = f"Group_{groupName}"
     for key, value in groups.items():
         if user_group == key:
             for team , win_rate in value.items():
-                if win_rate["W"] >higher_win:
+                if win_rate["W"] >current_higest:
                     higher_win=win_rate["W"]
-                    arr_higher[team] = win_rate["W"]
+                    highest_win[team] = win_rate["W"]
                 elif higher_win == win_rate["W"]:
-                    arr_higher[team]=win_rate["W"]
+                    highest_win[team]=win_rate["W"]
 
-    print(arr_higher)
+    print(highest_win)
 
 
 def worldCupTeams(userChoice):
