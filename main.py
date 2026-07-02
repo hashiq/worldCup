@@ -29,9 +29,7 @@ def win_max(groupName):
                     highest_win[team] = win_rate["W"]
                 elif higher_win == win_rate["W"]:
                     highest_win[team]=win_rate["W"]
-
     print(highest_win)
-
 
 def worldCupTeams(userChoice):
     if userChoice == "1":
